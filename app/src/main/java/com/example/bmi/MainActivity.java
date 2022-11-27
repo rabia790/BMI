@@ -2,6 +2,7 @@ package com.example.bmi;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -30,6 +31,9 @@ public class MainActivity extends AppCompatActivity {
     }
 private void calculateBmi(String mass, String height){
         bmi = Integer.parseInt(mass)/Integer.parseInt(height);
+        Intent intent = new Intent(MainActivity.this, CalculatedBmiActivity.class);
+        intent.putExtra("key", String.valueOf(bmi));
+        startActivity(intent);
 }
 
 }
